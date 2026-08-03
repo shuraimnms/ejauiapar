@@ -175,7 +175,7 @@ function Home() {
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="w-6 flex justify-center"><Stamp className="h-5 w-5 text-[#fcd34d]" /></div>
-                <span className="text-white font-medium text-sm tracking-wider uppercase w-24">AYURVEDA</span>
+                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">AYURVEDA</span>
                 <div className="flex-1 flex items-center">
                   <div className="h-[1px] bg-white/20 flex-1"></div>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>
@@ -183,7 +183,7 @@ function Home() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-6 flex justify-center"><LineChart className="h-5 w-5 text-[#fcd34d]" /></div>
-                <span className="text-white font-medium text-sm tracking-wider uppercase w-24">UNANI</span>
+                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">UNANI</span>
                 <div className="flex-1 flex items-center">
                   <div className="h-[1px] bg-white/20 flex-1"></div>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>
@@ -191,7 +191,7 @@ function Home() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-6 flex justify-center"><Zap className="h-5 w-5 text-[#fcd34d]" /></div>
-                <span className="text-white font-medium text-sm tracking-wider uppercase w-24">PHARMACEUTICALS</span>
+                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">PHARMACEUTICALS</span>
                 <div className="flex-1 flex items-center">
                   <div className="h-[1px] bg-white/20 flex-1"></div>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>
@@ -212,7 +212,7 @@ function Home() {
           </span>
         </div>
 
-        <div className="container-page relative z-10 flex flex-wrap items-center justify-between px-4 lg:px-12 pt-4">
+        <div className="container-page relative z-10 flex flex-wrap items-center justify-center gap-6 md:justify-between px-4 lg:px-12 py-6 md:py-4">
           
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full border-2 border-[#fcd34d] flex items-center justify-center bg-[#fcd34d]">
