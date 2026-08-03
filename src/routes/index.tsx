@@ -146,6 +146,9 @@ function Home() {
               <div className="w-2 h-2 bg-[#fcd34d]"></div>
             </div>
             
+            <div className="text-[11.5px] md:text-[13px] font-bold tracking-[0.15em] text-white/90 uppercase mb-4 leading-relaxed">
+              European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review
+            </div>
             <h1 className="font-serif text-4xl md:text-[42px] font-bold leading-[1.1] text-white mb-4">
               Ayurvedic, <br />
               <span className="text-[#fcd34d]">Unani, Pharmaceuticals</span> <br />
