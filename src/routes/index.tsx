@@ -149,12 +149,11 @@ function Home() {
             </div>
             
             <div className="text-[11.5px] md:text-[13px] font-bold tracking-[0.15em] text-white/90 uppercase mb-4 leading-relaxed">
-              European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review
+              WELCOME TO EJAUIAPAR
             </div>
-            <h1 className="font-serif text-[32px] sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.25] md:leading-[1.15] font-bold leading-[1.1] text-white mb-4">
-              Ayurvedic, <br />
-              <span className="text-[#fcd34d]">Unani, Pharmaceuticals</span> <br />
-              and Allopathic Review
+            <h1 className="font-serif text-[32px] sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.25] md:leading-[1.15] font-bold text-white mb-6 drop-shadow-lg">
+              European Journal of <br />
+              <span className="text-[#fcd34d]">Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review</span>
             </h1>
             
             <p className="text-white/90 text-[15px] leading-relaxed mb-8 max-w-lg md:text-[17px]">
