@@ -1,12 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { SiteLayout } from "@/components/site/site-layout";
-import {
-  currentIssueQuery,
-  articlesQuery,
-  announcementsQuery,
-  settingsQuery,
-} from "@/lib/queries";
+import { currentIssueQuery, articlesQuery, announcementsQuery, settingsQuery } from "@/lib/queries";
 import { JOURNAL } from "@/lib/journal";
 import {
   ArrowRight,
@@ -57,16 +52,24 @@ const INDEXING_PARTNERS = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "EJAUIAPAR — European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review" },
+      {
+        title:
+          "EJAUIAPAR — European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review",
+      },
       {
         name: "description",
         content:
           "EJAUIAPAR is a peer-reviewed, open access journal publishing innovative research in ayurvedic, unani, pharmaceuticals and allopathic review.",
       },
-      { property: "og:title", content: "EJAUIAPAR — European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review" },
+      {
+        property: "og:title",
+        content:
+          "EJAUIAPAR — European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review",
+      },
       {
         property: "og:description",
-        content: "Peer-reviewed, open access quarterly journal in ayurveda, unani and pharmaceuticals.",
+        content:
+          "Peer-reviewed, open access quarterly journal in ayurveda, unani and pharmaceuticals.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -94,7 +97,11 @@ const QUICK_LINKS = [
 const FEATURES = [
   { icon: Unlock, title: "Open Access", body: "Freely available for reading and download" },
   { icon: Users, title: "Double Blind Review", body: "All submissions are reviewed anonymously" },
-  { icon: CalendarDays, title: "Quarterly Publication", body: "4 Issues per year (Mar, Jun, Sep, Dec)" },
+  {
+    icon: CalendarDays,
+    title: "Quarterly Publication",
+    body: "4 Issues per year (Mar, Jun, Sep, Dec)",
+  },
   { icon: Globe, title: "Global Readership", body: "Reach scholars and researchers worldwide" },
 ] as const;
 
@@ -120,26 +127,29 @@ function Home() {
       <section className="relative w-full min-h-[100svh] md:min-h-[600px] lg:min-h-[700px] overflow-hidden bg-[#14532d]">
         {/* Full Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/ejauiapar_hero_bg.jpg" 
-            alt="Global Research" 
+          <img
+            src="/images/ejauiapar_hero_bg.jpg"
+            alt="Global Research"
             className="w-full h-full object-cover object-center"
           />
         </div>
-          {/* Elegant Dark gradient for text readability without blocking the image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-black/5 pointer-events-none z-0"></div>
+        {/* Elegant Dark gradient for text readability without blocking the image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-black/5 pointer-events-none z-0"></div>
 
         {/* Right Edge Call for Papers Tab */}
-        <Link to="/conferences/call-for-papers" className="hidden md:flex absolute right-0 top-[20%] z-30 bg-[#16a34a] text-white py-4 px-2 rounded-l-md font-bold text-sm tracking-widest writing-mode-vertical hover:bg-[#15803d] transition-colors shadow-lg" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+        <Link
+          to="/conferences/call-for-papers"
+          className="hidden md:flex absolute right-0 top-[20%] z-30 bg-[#16a34a] text-white py-4 px-2 rounded-l-md font-bold text-sm tracking-widest writing-mode-vertical hover:bg-[#15803d] transition-colors shadow-lg"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+        >
           CALL FOR PAPERS
         </Link>
 
         {/* Left Dark Blue Overlay Box */}
         <div className="relative z-10 container-page h-full flex items-center">
           <div className="w-full max-w-[650px] bg-transparent px-4 py-24 sm:px-6 md:py-10 md:px-10 md:pt-16 relative z-10">
-            
             {/* Green top-left corner accent to mimic image's swoosh from header (optional, but requested exactness so we focus on the box content) */}
-            
+
             {/* Small Gold Squares */}
             <div className="flex gap-1.5 mb-6">
               <div className="w-2 h-2 bg-[#fcd34d]"></div>
@@ -147,19 +157,21 @@ function Home() {
               <div className="w-2 h-2 bg-[#fcd34d]"></div>
               <div className="w-2 h-2 bg-[#fcd34d]"></div>
             </div>
-            
+
             <div className="text-[11.5px] md:text-[13px] font-bold tracking-[0.15em] text-white/90 uppercase mb-4 leading-relaxed">
               WELCOME TO EJAUIAPAR
             </div>
             <h1 className="font-serif text-[32px] sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.25] md:leading-[1.15] font-bold text-white mb-6 drop-shadow-lg">
               European Journal of <br />
-              <span className="text-[#fcd34d]">Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review</span>
+              <span className="text-[#fcd34d]">
+                Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review
+              </span>
             </h1>
-            
+
             <p className="text-white/90 text-[15px] leading-relaxed mb-8 max-w-lg md:text-[17px]">
               Integrating traditional healing wisdom with modern allopathic review.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mb-10 relative z-20">
               <Link
                 to="/current-issue"
@@ -178,31 +190,42 @@ function Home() {
             {/* Icons List */}
             <div className="space-y-4 max-w-[320px]">
               <div className="flex items-center gap-4">
-                <div className="w-6 flex justify-center"><Stamp className="h-5 w-5 text-[#fcd34d]" /></div>
-                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">AYURVEDA</span>
+                <div className="w-6 flex justify-center">
+                  <Stamp className="h-5 w-5 text-[#fcd34d]" />
+                </div>
+                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">
+                  AYURVEDA
+                </span>
                 <div className="flex-1 flex items-center">
                   <div className="h-[1px] bg-white/20 flex-1"></div>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-6 flex justify-center"><LineChart className="h-5 w-5 text-[#fcd34d]" /></div>
-                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">UNANI</span>
+                <div className="w-6 flex justify-center">
+                  <LineChart className="h-5 w-5 text-[#fcd34d]" />
+                </div>
+                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">
+                  UNANI
+                </span>
                 <div className="flex-1 flex items-center">
                   <div className="h-[1px] bg-white/20 flex-1"></div>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-6 flex justify-center"><Zap className="h-5 w-5 text-[#fcd34d]" /></div>
-                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">PHARMACEUTICALS</span>
+                <div className="w-6 flex justify-center">
+                  <Zap className="h-5 w-5 text-[#fcd34d]" />
+                </div>
+                <span className="text-white font-medium text-sm tracking-wider uppercase whitespace-nowrap">
+                  PHARMACEUTICALS
+                </span>
                 <div className="flex-1 flex items-center">
                   <div className="h-[1px] bg-white/20 flex-1"></div>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </section>
@@ -217,7 +240,6 @@ function Home() {
         </div>
 
         <div className="container-page relative z-10 flex flex-wrap items-center justify-center gap-6 md:justify-between px-4 lg:px-12 py-6 md:py-4">
-          
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full border-2 border-[#fcd34d] flex items-center justify-center bg-[#fcd34d]">
               <Globe2 className="h-5 w-5 text-white" />
@@ -252,7 +274,9 @@ function Home() {
             <div className="w-12 h-12 rounded-full border-2 border-[#fcd34d] flex items-center justify-center bg-[#fcd34d]">
               <Users className="h-5 w-5 text-white" />
             </div>
-            <span className="font-serif font-bold text-[#14532d] tracking-wide">PHARMACEUTICALS</span>
+            <span className="font-serif font-bold text-[#14532d] tracking-wide">
+              PHARMACEUTICALS
+            </span>
           </div>
 
           <div className="hidden md:block flex-1 mx-4">
@@ -269,7 +293,6 @@ function Home() {
             </div>
             <span className="font-serif font-bold text-[#14532d] tracking-wide">ALLOPATHIC</span>
           </div>
-
         </div>
       </div>
 
@@ -307,12 +330,19 @@ function Home() {
                         ]
                     ).map((a) => (
                       <li key={a.id} className="flex items-start gap-1.5 text-foreground/85">
-                        <span className="mt-1.5 h-1 w-1 flex-none rounded-full" style={{ background: "var(--gold)" }} />
+                        <span
+                          className="mt-1.5 h-1 w-1 flex-none rounded-full"
+                          style={{ background: "var(--gold)" }}
+                        />
                         <span className="leading-snug">{a.title}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link to="/archives" className="mt-3 inline-block text-xs font-semibold underline" style={{ color: "var(--gold)" }}>
+                  <Link
+                    to="/archives"
+                    className="mt-3 inline-block text-xs font-semibold underline"
+                    style={{ color: "var(--gold)" }}
+                  >
                     View All
                   </Link>
                 </InfoBlock>
@@ -322,7 +352,10 @@ function Home() {
                   <ul className="space-y-1.5 text-sm">
                     {currentArticles.slice(0, 4).map((a) => (
                       <li key={a.id} className="flex items-start gap-1.5">
-                        <span className="mt-1.5 h-1 w-1 flex-none rounded-full" style={{ background: "var(--gold)" }} />
+                        <span
+                          className="mt-1.5 h-1 w-1 flex-none rounded-full"
+                          style={{ background: "var(--gold)" }}
+                        />
                         <Link
                           to="/articles/$slug"
                           params={{ slug: a.slug }}
@@ -333,7 +366,11 @@ function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/latest-articles" className="mt-3 inline-block text-xs font-semibold underline" style={{ color: "var(--gold)" }}>
+                  <Link
+                    to="/latest-articles"
+                    className="mt-3 inline-block text-xs font-semibold underline"
+                    style={{ color: "var(--gold)" }}
+                  >
                     View All Articles
                   </Link>
                 </InfoBlock>
@@ -343,12 +380,19 @@ function Home() {
                   <ul className="space-y-1.5 text-sm">
                     {WHY_POINTS.map((p) => (
                       <li key={p} className="flex items-start gap-1.5 text-foreground/85">
-                        <ChevronRight className="mt-0.5 h-3.5 w-3.5 flex-none" style={{ color: "var(--gold)" }} />
+                        <ChevronRight
+                          className="mt-0.5 h-3.5 w-3.5 flex-none"
+                          style={{ color: "var(--gold)" }}
+                        />
                         <span>{p}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link to="/about" className="mt-3 inline-block text-xs font-semibold underline" style={{ color: "var(--gold)" }}>
+                  <Link
+                    to="/about"
+                    className="mt-3 inline-block text-xs font-semibold underline"
+                    style={{ color: "var(--gold)" }}
+                  >
                     Read More
                   </Link>
                 </InfoBlock>
@@ -392,8 +436,17 @@ function Home() {
                       Login
                     </button>
                     <div className="flex justify-between text-xs">
-                      <Link to="/auth" className="underline" style={{ color: "var(--gold)" }}>Forgot Password?</Link>
-                      <Link to="/auth" search={{ mode: "up" }} className="underline" style={{ color: "var(--gold)" }}>Create Account</Link>
+                      <Link to="/auth" className="underline" style={{ color: "var(--gold)" }}>
+                        Forgot Password?
+                      </Link>
+                      <Link
+                        to="/auth"
+                        search={{ mode: "up" }}
+                        className="underline"
+                        style={{ color: "var(--gold)" }}
+                      >
+                        Create Account
+                      </Link>
                     </div>
                   </form>
                 </InfoBlock>
@@ -518,7 +571,10 @@ function Home() {
       <section className="relative bg-gradient-to-b from-brand-muted/20 via-background to-background">
         <div className="container-page py-16 lg:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "var(--gold)" }}>
+            <div
+              className="text-[11px] font-bold uppercase tracking-widest"
+              style={{ color: "var(--gold)" }}
+            >
               How it works
             </div>
             <h2 className="mt-2 font-serif text-3xl md:text-4xl font-semibold text-brand">
@@ -549,7 +605,10 @@ function Home() {
       <section className="border-y border-border bg-gradient-to-r from-brand-muted/50 via-background to-brand-muted/50 py-10">
         <div className="container-page">
           <div className="mx-auto mb-6 max-w-2xl text-center">
-            <div className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "var(--gold)" }}>
+            <div
+              className="text-[11px] font-bold uppercase tracking-widest"
+              style={{ color: "var(--gold)" }}
+            >
               Abstracting &amp; Indexing
             </div>
             <h2 className="mt-2 font-serif text-2xl md:text-3xl font-semibold text-brand">
@@ -558,28 +617,54 @@ function Home() {
           </div>
 
           <div className="group relative overflow-hidden rounded-xl border border-border bg-card py-4">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-card to-transparent" aria-hidden />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-card to-transparent" aria-hidden />
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-card to-transparent"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-card to-transparent"
+              aria-hidden
+            />
             <div className="flex w-max animate-marquee gap-10 group-hover:[animation-play-state:paused]">
               {[...INDEXING_PARTNERS, ...INDEXING_PARTNERS].map((p, i) => (
-                <div key={`${p.name}-${i}`} className="flex items-center gap-3 whitespace-nowrap px-2">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-md text-brand-foreground shadow-elev animate-float" style={{ background: "var(--brand)" }}>
+                <div
+                  key={`${p.name}-${i}`}
+                  className="flex items-center gap-3 whitespace-nowrap px-2"
+                >
+                  <span
+                    className="flex h-9 w-9 items-center justify-center rounded-md text-brand-foreground shadow-elev animate-float"
+                    style={{ background: "var(--brand)" }}
+                  >
                     <p.icon className="h-4 w-4" />
                   </span>
                   <span className="font-serif text-base font-semibold text-brand">{p.name}</span>
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground">{p.category}</span>
+                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                    {p.category}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="group relative mt-3 overflow-hidden rounded-xl border border-border bg-background py-3">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" aria-hidden />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" aria-hidden />
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent"
+              aria-hidden
+            />
             <div className="flex w-max animate-marquee-reverse gap-8 group-hover:[animation-play-state:paused]">
               {[...INDEXING_PARTNERS, ...INDEXING_PARTNERS].reverse().map((p, i) => (
-                <span key={`t-${p.name}-${i}`} className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold text-foreground/80">
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--gold)" }} />
+                <span
+                  key={`t-${p.name}-${i}`}
+                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold text-foreground/80"
+                >
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ background: "var(--gold)" }}
+                  />
                   {p.name}
                 </span>
               ))}
@@ -593,16 +678,19 @@ function Home() {
         <div className="container-page py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-center">
             <div>
-              <div className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "var(--gold)" }}>
+              <div
+                className="text-[11px] font-bold uppercase tracking-widest"
+                style={{ color: "var(--gold)" }}
+              >
                 Focus & Scope
               </div>
               <h2 className="mt-2 font-serif text-3xl md:text-4xl font-semibold text-brand">
                 Subject areas we publish
               </h2>
               <p className="mt-4 text-sm md:text-[15px] text-muted-foreground leading-relaxed">
-                EJAUIAPAR welcomes original manuscripts across commerce, management, finance and allied
-                interdisciplinary domains, from empirical studies and conceptual reviews to case
-                research and policy analysis.
+                EJAUIAPAR welcomes original manuscripts across commerce, management, finance and
+                allied interdisciplinary domains, from empirical studies and conceptual reviews to
+                case research and policy analysis.
               </p>
               <Link
                 to="/aims-scope"
@@ -672,8 +760,9 @@ function Home() {
                 <span style={{ color: "var(--gold)" }}>Volume 11, Issue 3</span>
               </h2>
               <p className="mt-3 max-w-xl text-sm md:text-[15px] text-white/80">
-                Original, unpublished research in ayurvedic, unani, pharmaceuticals and allopathic review is
-                invited. Fast-track peer review, DOI on acceptance, and open access indexing.
+                Original, unpublished research in ayurvedic, unani, pharmaceuticals and allopathic
+                review is invited. Fast-track peer review, DOI on acceptance, and open access
+                indexing.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
@@ -717,7 +806,10 @@ function Home() {
       <section className="bg-background">
         <div className="container-page py-16 lg:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "var(--gold)" }}>
+            <div
+              className="text-[11px] font-bold uppercase tracking-widest"
+              style={{ color: "var(--gold)" }}
+            >
               Trusted by researchers
             </div>
             <h2 className="mt-2 font-serif text-3xl md:text-4xl font-semibold text-brand">

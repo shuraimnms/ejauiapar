@@ -6,7 +6,11 @@ export const Route = createFileRoute("/latest-articles")({
   head: () => ({
     meta: [
       { title: "Latest Articles — EJAUIAPAR" },
-      { name: "description", content: "Recently published, peer-reviewed research from EJAUIAPAR in commerce, management, finance, marketing, HRM, and allied disciplines." },
+      {
+        name: "description",
+        content:
+          "Recently published, peer-reviewed research from EJAUIAPAR in commerce, management, finance, marketing, HRM, and allied disciplines.",
+      },
       { property: "og:title", content: "Latest Articles — EJAUIAPAR" },
       { property: "og:description", content: "The newest open-access research from EJAUIAPAR." },
     ],

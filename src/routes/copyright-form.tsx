@@ -7,7 +7,13 @@ import { Download, Signature } from "lucide-react";
 
 export const Route = createFileRoute("/copyright-form")({
   head: () => ({
-    meta: [{ title: "Copyright Form — EJAUIAPAR" }, { name: "description", content: "Fillable Copyright Assignment Form for EJAUIAPAR manuscripts." }],
+    meta: [
+      { title: "Copyright Form — EJAUIAPAR" },
+      {
+        name: "description",
+        content: "Fillable Copyright Assignment Form for EJAUIAPAR manuscripts.",
+      },
+    ],
     links: [{ rel: "canonical", href: "/copyright-form" }],
   }),
   component: CopyrightForm,
@@ -24,7 +30,8 @@ function CopyrightForm() {
     agreeExclusive: false,
     agreeConflicts: false,
   });
-  const set = <K extends keyof typeof state>(k: K, v: (typeof state)[K]) => setState((s) => ({ ...s, [k]: v }));
+  const set = <K extends keyof typeof state>(k: K, v: (typeof state)[K]) =>
+    setState((s) => ({ ...s, [k]: v }));
 
   const generatePDF = () => {
     const w = window.open("", "_blank");
@@ -65,48 +72,100 @@ function CopyrightForm() {
           <Breadcrumbs trail={[{ label: "Copyright Form" }]} />
           <div className="space-y-4">
             <label className="block">
-              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">Manuscript title</div>
-              <input value={state.manuscriptTitle} onChange={(e) => set("manuscriptTitle", e.target.value)} className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand" />
+              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Manuscript title
+              </div>
+              <input
+                value={state.manuscriptTitle}
+                onChange={(e) => set("manuscriptTitle", e.target.value)}
+                className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand"
+              />
             </label>
             <label className="block">
-              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">Corresponding author name</div>
-              <input value={state.authorName} onChange={(e) => set("authorName", e.target.value)} className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand" />
+              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Corresponding author name
+              </div>
+              <input
+                value={state.authorName}
+                onChange={(e) => set("authorName", e.target.value)}
+                className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand"
+              />
             </label>
             <label className="block">
-              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">Co-authors (comma separated)</div>
-              <input value={state.coAuthors} onChange={(e) => set("coAuthors", e.target.value)} className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand" />
+              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Co-authors (comma separated)
+              </div>
+              <input
+                value={state.coAuthors}
+                onChange={(e) => set("coAuthors", e.target.value)}
+                className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand"
+              />
             </label>
 
             <fieldset className="space-y-2 rounded-md border border-border bg-card p-4">
-              <legend className="px-1 text-xs uppercase tracking-wider text-muted-foreground">Declarations</legend>
-              {([
-                ["agreeOriginal", "The manuscript is original and has not been published elsewhere."],
-                ["agreeExclusive", "All named authors have contributed to the work and approved the final version."],
-                ["agreeConflicts", "All conflicts of interest are disclosed in the manuscript."],
-              ] as const).map(([k, l]) => (
+              <legend className="px-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Declarations
+              </legend>
+              {(
+                [
+                  [
+                    "agreeOriginal",
+                    "The manuscript is original and has not been published elsewhere.",
+                  ],
+                  [
+                    "agreeExclusive",
+                    "All named authors have contributed to the work and approved the final version.",
+                  ],
+                  ["agreeConflicts", "All conflicts of interest are disclosed in the manuscript."],
+                ] as const
+              ).map(([k, l]) => (
                 <label key={k} className="flex items-start gap-2 text-sm">
-                  <input type="checkbox" checked={state[k]} onChange={(e) => set(k, e.target.checked)} className="mt-1" />
+                  <input
+                    type="checkbox"
+                    checked={state[k]}
+                    onChange={(e) => set(k, e.target.checked)}
+                    className="mt-1"
+                  />
                   <span>{l}</span>
                 </label>
               ))}
             </fieldset>
 
             <label className="block">
-              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">Signature (type full name)</div>
-              <input value={state.signature} onChange={(e) => set("signature", e.target.value)} placeholder="Your full legal name" className="h-14 w-full rounded-md border border-border bg-background px-3 font-[cursive] text-xl outline-none focus:border-brand" />
+              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Signature (type full name)
+              </div>
+              <input
+                value={state.signature}
+                onChange={(e) => set("signature", e.target.value)}
+                placeholder="Your full legal name"
+                className="h-14 w-full rounded-md border border-border bg-background px-3 font-[cursive] text-xl outline-none focus:border-brand"
+              />
             </label>
             <label className="block">
-              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">Date</div>
-              <input type="date" value={state.date} onChange={(e) => set("date", e.target.value)} className="h-11 rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand" />
+              <div className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Date
+              </div>
+              <input
+                type="date"
+                value={state.date}
+                onChange={(e) => set("date", e.target.value)}
+                className="h-11 rounded-md border border-border bg-background px-3 text-sm outline-none focus:border-brand"
+              />
             </label>
 
-            <button onClick={generatePDF} className="inline-flex h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-semibold text-brand-foreground">
+            <button
+              onClick={generatePDF}
+              className="inline-flex h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-semibold text-brand-foreground"
+            >
               <Download className="h-4 w-4" /> Generate & download signed form
             </button>
           </div>
         </div>
         <aside className="rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2 text-foreground font-serif text-lg font-semibold"><Signature className="h-5 w-5 text-brand" /> How it works</div>
+          <div className="flex items-center gap-2 text-foreground font-serif text-lg font-semibold">
+            <Signature className="h-5 w-5 text-brand" /> How it works
+          </div>
           <div className="mt-2 rule-gold" />
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             <li>Fill each field above.</li>

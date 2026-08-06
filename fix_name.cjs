@@ -1,18 +1,18 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const DIRECTORIES = ['src', 'public'];
-const EXTENSIONS = ['.tsx', '.ts', '.css', '.json', '.html', '.md'];
+const DIRECTORIES = ["src", "public"];
+const EXTENSIONS = [".tsx", ".ts", ".css", ".json", ".html", ".md"];
 
 const REPLACEMENTS = [
-  { from: /International Journal of Academic Research in/g, to: 'European Journal of' }
+  { from: /International Journal of Academic Research in/g, to: "European Journal of" },
 ];
 
 function processFile(filePath) {
   const ext = path.extname(filePath);
   if (!EXTENSIONS.includes(ext)) return;
 
-  const content = fs.readFileSync(filePath, 'utf8');
+  const content = fs.readFileSync(filePath, "utf8");
   let newContent = content;
 
   for (const { from, to } of REPLACEMENTS) {
@@ -20,7 +20,7 @@ function processFile(filePath) {
   }
 
   if (content !== newContent) {
-    fs.writeFileSync(filePath, newContent, 'utf8');
+    fs.writeFileSync(filePath, newContent, "utf8");
     console.log(`Updated: ${filePath}`);
   }
 }
@@ -41,4 +41,4 @@ function processDirectory(dir) {
 for (const dir of DIRECTORIES) {
   processDirectory(path.join(__dirname, dir));
 }
-console.log('Fixed journal name.');
+console.log("Fixed journal name.");

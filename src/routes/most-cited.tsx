@@ -6,7 +6,11 @@ export const Route = createFileRoute("/most-cited")({
   head: () => ({
     meta: [
       { title: "Most Cited Papers — EJAUIAPAR" },
-      { name: "description", content: "EJAUIAPAR articles with the highest citation counts across Crossref, Google Scholar, and partner databases." },
+      {
+        name: "description",
+        content:
+          "EJAUIAPAR articles with the highest citation counts across Crossref, Google Scholar, and partner databases.",
+      },
       { property: "og:title", content: "Most Cited Papers — EJAUIAPAR" },
       { property: "og:description", content: "High-impact EJAUIAPAR research by citation count." },
     ],

@@ -77,7 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "EJAUIAPAR — European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review" },
+      {
+        title:
+          "EJAUIAPAR — European Journal of Ayurvedic, Unani and Interdisciplinary Pharmaceuticals & Allopathic Review",
+      },
       {
         name: "description",
         content:
@@ -113,7 +116,9 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body suppressHydrationWarning>
-        <a href="#main" className="skip-link">Skip to content</a>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         {children}
         <Scripts />
       </body>
