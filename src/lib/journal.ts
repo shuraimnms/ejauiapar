@@ -7,8 +7,8 @@ export const JOURNAL = {
   short: "EJAUIAPAR",
   tagline:
     "Advancing Global Research in Ayurveda, Unani, Pharmacy, Integrative Medicine, and Allopathic Healthcare",
-  issn_online: "XXXX-XXXX",
-  issn_print: "XXXX-XXXX",
+  issn_online: "3143-0503",
+  issn_print: "",
   license: "Open Access",
   frequency: "Quarterly",
   founded: 2021,

@@ -32,7 +32,8 @@ export function SiteFooter() {
           <div className="font-serif text-xl font-semibold">{JOURNAL.short}</div>
           <p className="mt-2 max-w-md text-sm text-muted-foreground">{JOURNAL.tagline}</p>
           <p className="mt-4 text-xs text-muted-foreground">
-            ISSN (Online) {JOURNAL.issn_online} · ISSN (Print) {JOURNAL.issn_print} ·{" "}
+            {JOURNAL.issn_online ? `ISSN (Online) ${JOURNAL.issn_online} · ` : ''}
+            {JOURNAL.issn_print ? `ISSN (Print) ${JOURNAL.issn_print} · ` : ''}
             {JOURNAL.license}
           </p>
           <p className="mt-2 text-xs text-muted-foreground">{JOURNAL.address}</p>
